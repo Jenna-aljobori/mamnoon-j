@@ -22,11 +22,11 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 w-96 h-96 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
+          className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 md:w-96 sm:h-72 md:h-96 rounded-[40%_60%_70%_30%/60%_30%_70%_40%]"
           style={{
             background:
               "radial-gradient(circle, rgba(255,175,18,0.3) 0%, rgba(255,175,18,0.1) 70%, transparent 100%)",
-            filter: "blur(40px)",
+            filter: "blur(30px) sm:blur(40px)",
           }}
         />
 
@@ -42,11 +42,11 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-32 right-20 w-[500px] h-[500px] rounded-[60%_40%_30%_70%/40%_60%_50%_50%]"
+          className="absolute bottom-20 sm:bottom-32 right-10 sm:right-20 w-64 h-64 sm:w-96 md:w-[500px] sm:h-96 md:h-[500px] rounded-[60%_40%_30%_70%/40%_60%_50%_50%]"
           style={{
             background:
               "radial-gradient(circle, rgba(47,165,134,0.3) 0%, rgba(47,165,134,0.1) 70%, transparent 100%)",
-            filter: "blur(50px)",
+            filter: "blur(40px) sm:blur(50px)",
           }}
         />
 
@@ -62,11 +62,11 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-[50%_50%_40%_60%/60%_40%_60%_40%]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-60 md:w-72 sm:h-60 md:h-72 rounded-[50%_50%_40%_60%/60%_40%_60%_40%]"
           style={{
             background:
               "radial-gradient(circle, rgba(255,208,45,0.25) 0%, rgba(255,208,45,0.08) 70%, transparent 100%)",
-            filter: "blur(45px)",
+            filter: "blur(35px) sm:blur(45px)",
           }}
         />
 
@@ -80,8 +80,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-160px)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[calc(100vh-160px)]">
           {/* Text Content - Right Side in RTL */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -193,6 +193,21 @@ export default function Hero() {
                 تعرف على الخدمات
               </motion.button>
             </motion.div>
+
+            {/* Support Text Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.8, duration: 0.5 }}
+              className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20"
+            >
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                نحن هنا لمساعدتك
+              </h3>
+              <p className="text-base sm:text-lg text-white/80">
+                تواصل معنا في أي وقت، فريقنا جاهز للرد على استفساراتك
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* Interactive Phone Mockups - Left Side in RTL */}
@@ -200,46 +215,46 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[400px] sm:h-[500px] lg:h-[600px] lg:order-1 hidden md:block"
+            className="relative h-[350px] xs:h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] lg:order-1 flex justify-center items-center"
           >
             {/* Main Phone (Front) */}
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+              className="relative z-20"
             >
-              <div className="relative w-[280px] h-[570px] bg-gradient-to-b from-[#2fa586] to-[#227962] rounded-[50px] shadow-2xl border-8 border-[#154a3c] overflow-hidden">
+              <div className="relative w-[200px] h-[410px] xs:w-[220px] xs:h-[450px] sm:w-[250px] sm:h-[510px] md:w-[280px] md:h-[570px] bg-gradient-to-b from-[#2fa586] to-[#227962] rounded-[30px] sm:rounded-[40px] md:rounded-[50px] shadow-2xl border-4 sm:border-6 md:border-8 border-[#154a3c] overflow-hidden">
                 {/* Phone Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-[#154a3c] rounded-b-3xl z-30"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 xs:w-28 xs:h-5 sm:w-32 sm:h-6 md:w-40 md:h-7 bg-[#154a3c] rounded-b-2xl sm:rounded-b-3xl z-30"></div>
 
                 {/* Scrollable Mini Homepage */}
                 <div className="w-full h-full overflow-y-scroll bg-[#f4f5f7] scrollbar-thin">
                   {/* Mini Hero Section */}
-                  <div className="bg-gradient-to-b from-[#2fa586] via-[#39c99d] to-[#f6b640] p-4 pt-10 pb-6 text-center">
+                  <div className="bg-gradient-to-b from-[#2fa586] via-[#39c99d] to-[#f6b640] p-2 xs:p-3 sm:p-4 pt-6 xs:pt-8 sm:pt-10 pb-4 xs:pb-5 sm:pb-6 text-center">
                     <Image
                       src="/Frame 292 (copy).svg"
                       alt="ممنون"
                       width={60}
                       height={60}
-                      className="h-10 w-auto mx-auto mb-3"
+                      className="h-6 xs:h-8 sm:h-10 w-auto mx-auto mb-2 xs:mb-2.5 sm:mb-3"
                     />
-                    <h3 className="text-[#154a3c] text-lg font-bold mb-1">
+                    <h3 className="text-[#154a3c] text-sm xs:text-base sm:text-lg font-bold mb-1">
                       يفوّلك وين ما تكون
                     </h3>
-                    <p className="text-[#154a3c]/70 text-xs mb-3">
+                    <p className="text-[#154a3c]/70 text-[10px] xs:text-[11px] sm:text-xs mb-2 xs:mb-2.5 sm:mb-3">
                       خدمة متكاملة لتوصيل الوقود والصيانة
                     </p>
-                    <button className="bg-[#154a3c] text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                    <button className="bg-[#154a3c] text-white px-3 py-1.5 xs:px-3.5 xs:py-1.5 sm:px-4 sm:py-2 rounded-full text-[10px] xs:text-[11px] sm:text-xs font-bold shadow-lg">
                       احجز الآن
                     </button>
                   </div>
 
                   {/* Mini Services Section */}
-                  <div className="p-4 bg-[#f6b640]">
-                    <h4 className="text-[#154a3c] font-bold text-sm mb-3 text-center">
+                  <div className="p-2 xs:p-3 sm:p-4 bg-[#f6b640]">
+                    <h4 className="text-[#154a3c] font-bold text-xs xs:text-sm mb-2 xs:mb-2.5 sm:mb-3 text-center">
                       خدماتنا
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 xs:space-y-2">
                       {[
                         {
                           name: "الوقود",
@@ -264,10 +279,12 @@ export default function Hero() {
                       ].map((service) => (
                         <div
                           key={service.name}
-                          className={`bg-gradient-to-r ${service.color} p-3 rounded-xl text-white flex items-center gap-2 shadow-md`}
+                          className={`bg-gradient-to-r ${service.color} p-2 xs:p-2.5 sm:p-3 rounded-lg xs:rounded-xl text-white flex items-center gap-1.5 xs:gap-2 shadow-md`}
                         >
-                          <span className="text-xl">{service.icon}</span>
-                          <span className="text-xs font-semibold">
+                          <span className="text-base xs:text-lg sm:text-xl">
+                            {service.icon}
+                          </span>
+                          <span className="text-[10px] xs:text-[11px] sm:text-xs font-semibold">
                             {service.name}
                           </span>
                         </div>
@@ -276,11 +293,11 @@ export default function Hero() {
                   </div>
 
                   {/* Mini Why Mamnon Section */}
-                  <div className="p-4 bg-[#d6e0d4]">
-                    <h4 className="text-[#154a3c] font-bold text-sm mb-3 text-center">
+                  <div className="p-2 xs:p-3 sm:p-4 bg-[#d6e0d4]">
+                    <h4 className="text-[#154a3c] font-bold text-xs xs:text-sm mb-2 xs:mb-2.5 sm:mb-3 text-center">
                       لماذا ممنون؟
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 xs:space-y-2">
                       {[
                         { title: "خدمة سريعة", icon: "⚡" },
                         { title: "جودة مضمونة", icon: "✓" },
@@ -288,12 +305,12 @@ export default function Hero() {
                       ].map((feature) => (
                         <div
                           key={feature.title}
-                          className="bg-white/80 p-2 rounded-lg flex items-center gap-2 shadow-sm border border-white/50"
+                          className="bg-white/80 p-1.5 xs:p-2 rounded-md xs:rounded-lg flex items-center gap-1.5 xs:gap-2 shadow-sm border border-white/50"
                         >
-                          <div className="w-6 h-6 rounded-full bg-[#2fa586] flex items-center justify-center text-xs text-white">
+                          <div className="w-5 h-5 xs:w-6 xs:h-6 rounded-full bg-[#2fa586] flex items-center justify-center text-[10px] xs:text-xs text-white">
                             {feature.icon}
                           </div>
-                          <span className="text-xs font-semibold text-[#154a3c]">
+                          <span className="text-[10px] xs:text-xs font-semibold text-[#154a3c]">
                             {feature.title}
                           </span>
                         </div>
@@ -302,21 +319,24 @@ export default function Hero() {
                   </div>
 
                   {/* Mini How It Works */}
-                  <div className="p-4 bg-[#e8ece7]">
-                    <h4 className="text-[#154a3c] font-bold text-sm mb-3 text-center">
+                  <div className="p-2 xs:p-3 sm:p-4 bg-[#e8ece7]">
+                    <h4 className="text-[#154a3c] font-bold text-xs xs:text-sm mb-2 xs:mb-2.5 sm:mb-3 text-center">
                       كيف يعمل؟
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 xs:space-y-2">
                       {[
                         { num: "١", text: "حمّل التطبيق" },
                         { num: "٢", text: "اختر الخدمة" },
                         { num: "٣", text: "استقبل الطلب" },
                       ].map((step) => (
-                        <div key={step.num} className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-[#f6b640] flex items-center justify-center text-[#154a3c] text-xs font-bold shadow-sm">
+                        <div
+                          key={step.num}
+                          className="flex items-center gap-1.5 xs:gap-2"
+                        >
+                          <div className="w-5 h-5 xs:w-6 xs:h-6 rounded-full bg-[#f6b640] flex items-center justify-center text-[#154a3c] text-[10px] xs:text-xs font-bold shadow-sm">
                             {step.num}
                           </div>
-                          <span className="text-xs text-[#154a3c]/80">
+                          <span className="text-[10px] xs:text-xs text-[#154a3c]/80">
                             {step.text}
                           </span>
                         </div>
@@ -325,28 +345,28 @@ export default function Hero() {
                   </div>
 
                   {/* Mini CTA Section */}
-                  <div className="p-4 bg-gradient-to-br from-[#2fa586] to-[#39c99d] text-center">
-                    <h4 className="text-white font-bold text-sm mb-2">
+                  <div className="p-2 xs:p-3 sm:p-4 bg-gradient-to-br from-[#2fa586] to-[#39c99d] text-center">
+                    <h4 className="text-white font-bold text-xs xs:text-sm mb-1.5 xs:mb-2">
                       جاهز للبدء؟
                     </h4>
-                    <p className="text-white/90 text-xs mb-3">
+                    <p className="text-white/90 text-[10px] xs:text-xs mb-2 xs:mb-2.5 sm:mb-3">
                       حمّل التطبيق الآن
                     </p>
-                    <button className="bg-white text-[#2fa586] px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                    <button className="bg-white text-[#2fa586] px-3 py-1.5 xs:px-3.5 xs:py-1.5 sm:px-4 sm:py-2 rounded-full text-[10px] xs:text-xs font-bold shadow-lg">
                       حمّل مجاناً
                     </button>
                   </div>
 
                   {/* Mini Footer */}
-                  <div className="p-4 bg-[#154a3c] text-center">
+                  <div className="p-2 xs:p-3 sm:p-4 bg-[#154a3c] text-center">
                     <Image
                       src="/Frame 292 (copy).svg"
                       alt="ممنون"
                       width={40}
                       height={40}
-                      className="h-8 w-auto mx-auto mb-2"
+                      className="h-5 xs:h-6 sm:h-8 w-auto mx-auto mb-1.5 xs:mb-2"
                     />
-                    <p className="text-white/60 text-[10px]">
+                    <p className="text-white/60 text-[8px] xs:text-[9px] sm:text-[10px]">
                       © 2025 ممنون. جميع الحقوق محفوظة
                     </p>
                   </div>
@@ -355,7 +375,17 @@ export default function Hero() {
                 {/* Custom Scrollbar Styles */}
                 <style jsx>{`
                   .scrollbar-thin::-webkit-scrollbar {
-                    width: 3px;
+                    width: 2px;
+                  }
+                  @media (min-width: 375px) {
+                    .scrollbar-thin::-webkit-scrollbar {
+                      width: 2.5px;
+                    }
+                  }
+                  @media (min-width: 640px) {
+                    .scrollbar-thin::-webkit-scrollbar {
+                      width: 3px;
+                    }
                   }
                   .scrollbar-thin::-webkit-scrollbar-track {
                     background: #e8ece7;

@@ -10,6 +10,10 @@
 }
 
 @theme inline {
+  /* Custom Breakpoint */
+  --breakpoint-xs: 375px;
+
+  /* Colors */
   --color-primary-green: #154a3c;
   --color-primary-yellow: #ffaf12;
   --color-support-green-1: #175343;
