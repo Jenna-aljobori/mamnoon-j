@@ -18,6 +18,7 @@ import {
   Users,
   Smile,
 } from "lucide-react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -91,19 +92,17 @@ function ContactHero() {
         animate={{ opacity: 1, y: 0 }}
         className="container mx-auto px-4 text-center relative z-10"
       >
-        {/* Animated Envelope with Glow */}
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-          className="mx-auto mb-8 w-28 h-28 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center shadow-2xl border-2 border-white/40"
-        >
-          <Mail className="w-14 h-14 text-[#154a3c]" />
-        </motion.div>
+        {/* Logo */}
+        <div className="mx-auto mb-8">
+          <Image
+            src="/Frame 292 (copy).svg"
+            alt="ممنون"
+            width={120}
+            height={120}
+            className="mx-auto"
+            priority
+          />
+        </div>
 
         <h1 className="text-4xl md:text-6xl font-bold text-[#154a3c] mb-4">
           نحن هنا لمساعدتك

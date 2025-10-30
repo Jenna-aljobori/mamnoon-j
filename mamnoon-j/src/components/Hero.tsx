@@ -89,19 +89,18 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-white space-y-8 lg:order-2"
           >
-            {/* Logo Badge */}
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20"
             >
               <Image
-                src="/logo (1).svg"
+                src="/Frame 292 (copy).svg"
                 alt="ممنون"
-                width={80}
-                height={30}
-                className="h-6 w-auto"
+                width={140}
+                height={140}
+                className="w-auto h-20"
               />
             </motion.div>
 
@@ -218,11 +217,11 @@ export default function Hero() {
                   {/* Mini Hero Section */}
                   <div className="bg-gradient-to-b from-[#2fa586] via-[#39c99d] to-[#f6b640] p-4 pt-10 pb-6 text-center">
                     <Image
-                      src="/logo (1).svg"
+                      src="/Frame 292 (copy).svg"
                       alt="ممنون"
-                      width={80}
-                      height={30}
-                      className="h-6 w-auto mx-auto mb-3 brightness-0"
+                      width={60}
+                      height={60}
+                      className="h-10 w-auto mx-auto mb-3"
                     />
                     <h3 className="text-[#154a3c] text-lg font-bold mb-1">
                       يفوّلك وين ما تكون
@@ -341,11 +340,11 @@ export default function Hero() {
                   {/* Mini Footer */}
                   <div className="p-4 bg-[#154a3c] text-center">
                     <Image
-                      src="/logo (1).svg"
+                      src="/Frame 292 (copy).svg"
                       alt="ممنون"
-                      width={60}
-                      height={20}
-                      className="h-4 w-auto mx-auto mb-2 brightness-0 invert"
+                      width={40}
+                      height={40}
+                      className="h-8 w-auto mx-auto mb-2"
                     />
                     <p className="text-white/60 text-[10px]">
                       © 2025 ممنون. جميع الحقوق محفوظة

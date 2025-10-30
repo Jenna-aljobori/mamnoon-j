@@ -135,13 +135,13 @@ export default function AppFeatures() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-[#154a3c] rounded-b-3xl z-30"></div>
 
                 {/* App Screenshot */}
-                <div className="w-full h-full overflow-hidden flex items-center justify-center bg-white">
+                <div className="w-full h-full overflow-hidden bg-white">
                   <Image
                     src="/Screenshot%20from%202025-10-29%2015-30-43.png"
                     alt="تطبيق ممنون"
                     width={320}
                     height={650}
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                     priority
                   />
                 </div>
