@@ -30,7 +30,7 @@ function ContactHero() {
   );
 
   return (
-    <section className="relative min-h-[50vh] bg-gradient-to-br from-[#2fa586] via-[#39c99d] to-[#f6b640] overflow-hidden flex items-center justify-center pt-20">
+    <section className="relative min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] bg-gradient-to-br from-[#2fa586] via-[#39c99d] to-[#f6b640] overflow-hidden flex items-center justify-center pt-20 pb-16 sm:pb-20 md:pb-24">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Icons */}
@@ -84,7 +84,7 @@ function ContactHero() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        className="container mx-auto px-4 text-center relative z-10"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8 sm:py-12"
       >
         {/* Logo */}
         <div className="mx-auto mb-6 sm:mb-8">
@@ -98,11 +98,11 @@ function ContactHero() {
           />
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-3 sm:mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-5 md:mb-6 leading-tight">
           نحن هنا لمساعدتك
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-[#154a3c]/80 max-w-2xl mx-auto px-4">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#154a3c]/80 max-w-2xl mx-auto px-4 leading-relaxed">
           تواصل معنا في أي وقت، فريقنا جاهز للرد على استفساراتك
         </p>
       </motion.div>
