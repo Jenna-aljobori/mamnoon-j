@@ -193,21 +193,6 @@ export default function Hero() {
                 تعرف على الخدمات
               </motion.button>
             </motion.div>
-
-            {/* Support Text Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.5 }}
-              className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20"
-            >
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                نحن هنا لمساعدتك
-              </h3>
-              <p className="text-base sm:text-lg text-white/80">
-                تواصل معنا في أي وقت، فريقنا جاهز للرد على استفساراتك
-              </p>
-            </motion.div>
           </motion.div>
 
           {/* Interactive Phone Mockups - Left Side in RTL */}
