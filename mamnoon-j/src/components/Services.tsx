@@ -2,20 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  Fuel,
-  Wrench,
-  Battery,
-  Droplet,
-  PhoneCall,
-  ChevronRight,
-  ChevronLeft,
-} from "lucide-react";
+import { Fuel, Wrench, Battery, Droplet, PhoneCall } from "lucide-react";
 
 export default function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const services = [
     {
@@ -55,20 +46,10 @@ export default function Services() {
     },
   ];
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 320;
-      scrollRef.current.scrollBy({
-        left: direction === "right" ? scrollAmount : -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section
       ref={ref}
-      className="py-20 bg-gradient-to-b from-[#f6b640] via-[#e8d5b8] to-[#d6e0d4] relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f6b640] via-[#e8d5b8] to-[#d6e0d4] relative overflow-hidden"
     >
       {/* Subtle Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
@@ -90,18 +71,18 @@ export default function Services() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[#154a3c]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[#154a3c]">
             خدماتنا
           </h2>
-          <div className="w-24 h-1 mx-auto bg-[#2fa586]" />
+          <div className="w-20 sm:w-24 h-1 mx-auto bg-[#2fa586]" />
         </motion.div>
 
         {/* Services Grid */}
-        <div className="relative space-y-6">
+        <div className="relative space-y-4 sm:space-y-6">
           {/* First Row - 3 Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.slice(0, 3).map((service, index) => {
               const Icon = service.icon;
               return (
@@ -189,7 +170,7 @@ export default function Services() {
           </div>
 
           {/* Second Row - 2 Cards Centered */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {services.slice(3, 5).map((service, index) => {
               const Icon = service.icon;
               return (

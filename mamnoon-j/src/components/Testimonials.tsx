@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const testimonials = [
   {
@@ -35,25 +35,25 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
+  }, []);
+
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
     }, 5000); // Auto-play every 5 seconds
 
     return () => clearInterval(timer);
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setDirection(-1);
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  }, [handleNext]);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -256,7 +256,7 @@ function TestimonialCard({
           transition={{ delay: 0.5 }}
           className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 text-right"
         >
-          "{testimonial.text}"
+          &ldquo;{testimonial.text}&rdquo;
         </motion.p>
 
         {/* Customer Info */}

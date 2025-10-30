@@ -2,8 +2,21 @@
 
 import { motion } from "framer-motion";
 import { ArrowLeft, Sparkles } from "lucide-react";
+import { useMemo } from "react";
 
 export default function CTA() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }).map((_, i) => ({
+        x: ((i * 13) % 20) - 10,
+        duration: 3 + ((i * 17) % 20) / 10,
+        delay: ((i * 23) % 50) / 10,
+        left: (i * 37 + 13) % 100,
+        top: (i * 53 + 29) % 100,
+      })),
+    []
+  );
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Animated Background */}
@@ -25,24 +38,24 @@ export default function CTA() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,175,18,0.1),transparent_50%)]" />
 
         {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <motion.div
             key={i}
             animate={{
               y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
+              x: [0, particle.x, 0],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
               ease: "easeInOut",
             }}
             className="absolute w-1 h-1 bg-white rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
           />
         ))}

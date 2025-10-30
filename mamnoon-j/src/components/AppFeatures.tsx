@@ -30,30 +30,30 @@ export default function AppFeatures() {
   return (
     <section
       ref={ref}
-      className="py-20 bg-gradient-to-b from-[#f4f5f7] to-[#e8ece7]"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#f4f5f7] to-[#e8ece7]"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content - Right Side in RTL */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:order-2 space-y-8"
+            className="lg:order-2 space-y-6 sm:space-y-8"
           >
             {/* Section Header */}
             <div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#154a3c] mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#154a3c] mb-3 sm:mb-4">
                 التطبيق الذكي
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-lg sm:text-xl text-gray-600">
                 كل ما تحتاجه في تطبيق واحد
               </p>
-              <div className="w-24 h-1 bg-[#f6b640] mt-4"></div>
+              <div className="w-20 sm:w-24 h-1 bg-[#f6b640] mt-3 sm:mt-4"></div>
             </div>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               تجربة مستخدم سلسة وسهلة مع واجهة عصرية وميزات ذكية تجعل طلب
               الخدمات أسهل من أي وقت مضى
             </p>
@@ -89,14 +89,14 @@ export default function AppFeatures() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 bg-gradient-to-r from-[#2fa586] to-[#39c99d] text-white px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center sm:justify-start gap-3 bg-gradient-to-r from-[#2fa586] to-[#39c99d] text-white px-5 sm:px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 shadow-lg w-full sm:w-auto"
               >
-                <Download size={24} />
+                <Download size={20} className="sm:w-6 sm:h-6" />
                 <div className="text-right">
                   <div className="text-xs">متوفر على</div>
                   <div className="text-sm font-bold">App Store</div>
@@ -106,9 +106,9 @@ export default function AppFeatures() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 bg-gradient-to-r from-[#f6b640] to-[#ffaf12] text-[#154a3c] px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center sm:justify-start gap-3 bg-gradient-to-r from-[#f6b640] to-[#ffaf12] text-[#154a3c] px-5 sm:px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 shadow-lg w-full sm:w-auto"
               >
-                <Download size={24} />
+                <Download size={20} className="sm:w-6 sm:h-6" />
                 <div className="text-right">
                   <div className="text-xs">حمّل من</div>
                   <div className="text-sm font-bold">Google Play</div>
@@ -122,7 +122,7 @@ export default function AppFeatures() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative lg:order-1"
+            className="relative lg:order-1 hidden sm:block"
           >
             <motion.div
               animate={{ y: [0, -20, 0] }}

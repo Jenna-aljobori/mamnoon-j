@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
-import { useRef, useState, useMemo } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useMemo } from "react";
 import {
   Fuel,
   CircleDot,
@@ -22,15 +22,6 @@ import Image from "next/image";
 
 // Offers Hero Section - Warm Theme
 function OffersHero() {
-  const services = [
-    { icon: Fuel, name: "الوقود", color: "#ff8a3d" },
-    { icon: CircleDot, name: "الإطارات", color: "#227962" },
-    { icon: Battery, name: "البطاريات", color: "#ffaf12" },
-    { icon: Droplet, name: "تغيير الزيت", color: "#2fa586" },
-    { icon: Wrench, name: "الصيانة", color: "#ffd02d" },
-    { icon: Car, name: "الفحص", color: "#39c99d" },
-  ];
-
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-[#2fa586] via-[#39c99d] to-[#f6b640] overflow-hidden pt-20">
       {/* Diagonal Background Pattern */}
@@ -43,24 +34,26 @@ function OffersHero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 h-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-80px)]">
           {/* LEFT SIDE - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 py-12 text-right"
+            className="relative z-10 py-8 sm:py-12 text-right"
           >
             {/* Brand Label */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8"
             >
-              <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-4">
-                <p className="text-[#154a3c] text-lg font-bold">عروض ممنون</p>
+              <div className="inline-block px-4 sm:px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-3 sm:mb-4">
+                <p className="text-[#154a3c] text-base sm:text-lg font-bold">
+                  عروض ممنون
+                </p>
               </div>
             </motion.div>
 
@@ -69,7 +62,7 @@ function OffersHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-8xl font-bold text-[#154a3c] mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-[#154a3c] mb-4 sm:mb-6 leading-tight"
             >
               خدمات متكاملة
               <br />
@@ -80,7 +73,7 @@ function OffersHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl text-[#154a3c]/80 mb-8 max-w-xl"
+              className="text-lg sm:text-xl md:text-2xl text-[#154a3c]/80 mb-6 sm:mb-8 max-w-xl"
             >
               خدمات احترافية متوفرة على مدار الساعة لراحتك وأمانك
             </motion.p>
@@ -396,21 +389,6 @@ function ServicesGrid() {
 function PaymentCardStack() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useTransform(mouseY, [-300, 300], [5, -5]);
-  const rotateY = useTransform(mouseX, [-300, 300], [-5, 5]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
 
   const cards = [
     {
@@ -788,11 +766,11 @@ function OffersCTA() {
   // Generate stable random positions for particles
   const particles = useMemo(
     () =>
-      Array.from({ length: 20 }).map(() => ({
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        duration: 5 + Math.random() * 3,
-        delay: Math.random() * 2,
+      Array.from({ length: 20 }).map((_, i) => ({
+        left: (i * 37 + 13) % 100,
+        top: (i * 53 + 29) % 100,
+        duration: 5 + ((i * 17) % 30) / 10,
+        delay: ((i * 23) % 20) / 10,
       })),
     []
   );

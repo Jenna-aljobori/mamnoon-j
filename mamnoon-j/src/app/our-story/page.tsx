@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import {
@@ -10,14 +10,11 @@ import {
   Shield,
   Leaf,
   Award,
-  ArrowDown,
   TrendingUp,
   Users,
   MapPin,
   Sparkles,
-  Zap,
   Brain,
-  Activity,
   Heart,
   Rocket,
   Star,
@@ -98,14 +95,14 @@ function StoryHero() {
               opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: 5 + Math.random() * 3,
+              duration: 5 + ((i * 17) % 30) / 10,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: ((i * 23) % 20) / 10,
             }}
             className="absolute w-2 h-2 bg-white/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${(i * 37 + 13) % 100}%`,
+              top: `${(i * 53 + 29) % 100}%`,
             }}
           />
         ))}
@@ -896,14 +893,14 @@ function StoryCTA() {
               opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: 5 + Math.random() * 3,
+              duration: 5 + ((i * 17) % 30) / 10,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: ((i * 23) % 20) / 10,
             }}
             className="absolute w-2 h-2 bg-white/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${(i * 37 + 13) % 100}%`,
+              top: `${(i * 53 + 29) % 100}%`,
             }}
           />
         ))}

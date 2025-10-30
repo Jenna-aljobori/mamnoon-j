@@ -80,14 +80,14 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-160px)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-160px)]">
           {/* Text Content - Right Side in RTL */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white space-y-8 lg:order-2"
+            className="text-white space-y-6 sm:space-y-8 lg:order-2"
           >
             {/* Logo */}
             <motion.div
@@ -100,7 +100,7 @@ export default function Hero() {
                 alt="ممنون"
                 width={140}
                 height={140}
-                className="w-auto h-20"
+                className="w-auto h-14 sm:h-16 md:h-20"
               />
             </motion.div>
 
@@ -109,7 +109,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
             >
               يفوّلك وين ما تكون
             </motion.h1>
@@ -119,13 +119,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl sm:text-2xl text-white/90 font-medium"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium"
             >
               خدمة متكاملة لتوصيل الوقود والصيانة الذكية
             </motion.p>
 
             {/* Service Tags */}
-            <div className="flex flex-wrap gap-3 text-lg">
+            <div className="flex flex-wrap gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg">
               {["الوقود", "الإطارات", "البطاريات", "تغيير الزيت"].map(
                 (service, index) => (
                   <motion.span
@@ -176,19 +176,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.5 }}
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#ffaf12] hover:bg-[#ffb13f] text-[#154a3c] px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 animate-pulse-glow"
+                className="bg-[#ffaf12] hover:bg-[#ffb13f] text-[#154a3c] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 animate-pulse-glow w-full sm:w-auto"
               >
                 احجز الآن
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
               >
                 تعرف على الخدمات
               </motion.button>
@@ -200,7 +200,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[600px] lg:order-1"
+            className="relative h-[400px] sm:h-[500px] lg:h-[600px] lg:order-1 hidden md:block"
           >
             {/* Main Phone (Front) */}
             <motion.div

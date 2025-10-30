@@ -6,17 +6,11 @@ import {
   Mail,
   Phone,
   MapPin,
-  Clock,
   Send,
   CheckCircle2,
   MessageSquare,
-  Instagram,
-  Linkedin,
   ArrowDown,
   AlertCircle,
-  PhoneCall,
-  Users,
-  Smile,
 } from "lucide-react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
@@ -27,10 +21,10 @@ function ContactHero() {
   // Generate stable particle positions
   const particles = useMemo(
     () =>
-      Array.from({ length: 20 }).map(() => ({
-        left: Math.random() * 100,
-        duration: 2 + Math.random() * 2,
-        delay: Math.random() * 2,
+      Array.from({ length: 20 }).map((_, i) => ({
+        left: (i * 37 + 13) % 100,
+        duration: 2 + ((i * 17) % 40) / 20,
+        delay: ((i * 23) % 40) / 20,
       })),
     []
   );
@@ -93,22 +87,22 @@ function ContactHero() {
         className="container mx-auto px-4 text-center relative z-10"
       >
         {/* Logo */}
-        <div className="mx-auto mb-8">
+        <div className="mx-auto mb-6 sm:mb-8">
           <Image
             src="/Frame 292 (copy).svg"
             alt="ممنون"
             width={120}
             height={120}
-            className="mx-auto"
+            className="mx-auto w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
             priority
           />
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-[#154a3c] mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-3 sm:mb-4">
           نحن هنا لمساعدتك
         </h1>
 
-        <p className="text-xl text-[#154a3c]/80 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-[#154a3c]/80 max-w-2xl mx-auto px-4">
           تواصل معنا في أي وقت، فريقنا جاهز للرد على استفساراتك
         </p>
       </motion.div>
@@ -528,328 +522,6 @@ function ContactInfoStrip() {
         </div>
       </div>
     </section>
-  );
-}
-
-// Interactive Map Section
-function MapSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section
-      ref={ref}
-      className="relative h-[600px] bg-gradient-to-br from-[#e8ece7] to-[#f4f5f7]"
-    >
-      {/* Map Background (Placeholder) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#f6b640]/20 to-[#2fa586]/20">
-        {/* Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `
-              linear-gradient(#2fa586 1px, transparent 1px),
-              linear-gradient(90deg, #2fa586 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px",
-          }}
-        />
-
-        {/* Map Icon */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <MapPin className="w-32 h-32 text-[#2fa586]" />
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Overlay Information Box */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-          backdropFilter: "blur(20px)",
-          border: "2px solid rgba(255,255,255,0.8)",
-          boxShadow:
-            "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
-        }}
-        className="absolute top-8 right-8 p-8 rounded-3xl max-w-sm"
-      >
-        <h3 className="text-2xl font-bold text-[#154a3c] mb-2">
-          العنوان الرئيسي
-        </h3>
-        <p className="text-[#154a3c]/80 text-lg mb-4">بغداد، العراق</p>
-        <a
-          href="https://maps.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#f6b640] to-[#ffaf12] text-[#154a3c] px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all"
-        >
-          <MapPin className="w-5 h-5" />
-          عرض على خرائط جوجل
-        </a>
-      </motion.div>
-    </section>
-  );
-}
-
-// Bento Grid Section (Working Hours + Emergency + Social)
-function BentoContactGrid() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-[#f4f5f7] to-[#e8ece7]"
-    >
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Working Hours - Large Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 }}
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-              backdropFilter: "blur(20px)",
-              border: "2px solid rgba(255,255,255,0.8)",
-              boxShadow:
-                "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
-            }}
-            className="md:col-span-2 p-10 rounded-3xl relative overflow-hidden group hover:shadow-2xl transition-all"
-          >
-            <div className="relative z-10">
-              <Clock className="w-16 h-16 text-[#f6b640] mb-6" />
-              <h3 className="text-3xl font-bold text-[#154a3c] mb-3">
-                ساعات العمل
-              </h3>
-              <p className="text-[#154a3c]/70 text-xl mb-2">السبت - الخميس</p>
-              <p className="text-[#2fa586] text-4xl font-bold">
-                8:00 ص - 8:00 م
-              </p>
-            </div>
-            {/* Animated Clock Hand */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              className="absolute top-10 left-10 w-32 h-32 border-4 border-[#2fa586]/20 rounded-full"
-            />
-          </motion.div>
-
-          {/* Emergency Phone - Medium Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2 }}
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-              backdropFilter: "blur(20px)",
-              border: "2px solid rgba(255,255,255,0.8)",
-              boxShadow:
-                "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
-            }}
-            className="p-8 rounded-3xl hover:shadow-2xl transition-all group"
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-              className="w-16 h-16 rounded-full bg-gradient-to-br from-[#d61e38] to-[#ff8a3d] flex items-center justify-center mb-4 shadow-lg"
-            >
-              <PhoneCall className="w-8 h-8 text-white" />
-            </motion.div>
-            <h3 className="text-xl font-bold text-[#154a3c] mb-2">
-              هاتف الطوارئ
-            </h3>
-            <p className="text-[#154a3c]/60 text-sm mb-3">
-              متاح على مدار الساعة 24/7
-            </p>
-            <a
-              href="tel:9647743538560"
-              className="text-[#2fa586] text-2xl font-bold hover:text-[#39c99d] transition-colors"
-            >
-              964 7743538560
-            </a>
-          </motion.div>
-
-          {/* Social Media - Wide Box */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3 }}
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-              backdropFilter: "blur(20px)",
-              border: "2px solid rgba(255,255,255,0.8)",
-              boxShadow:
-                "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
-            }}
-            className="md:col-span-3 p-10 rounded-3xl hover:shadow-2xl transition-all"
-          >
-            <h3 className="text-3xl font-bold text-[#154a3c] mb-8 text-center">
-              تابعنا على وسائل التواصل
-            </h3>
-
-            <div className="flex justify-center gap-6 flex-wrap">
-              {[
-                {
-                  Icon: Instagram,
-                  name: "Instagram",
-                  color: "from-purple-500 to-pink-500",
-                  href: "#",
-                },
-                {
-                  Icon: Linkedin,
-                  name: "LinkedIn",
-                  color: "from-blue-600 to-blue-400",
-                  href: "#",
-                },
-                {
-                  Icon: MessageSquare,
-                  name: "Snapchat",
-                  color: "from-yellow-400 to-yellow-300",
-                  href: "#",
-                },
-              ].map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${social.color} flex items-center justify-center shadow-xl hover:shadow-2xl transition-all`}
-                >
-                  <social.Icon className="w-10 h-10 text-white" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Stats Showcase Strip
-function StatsShowcase() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const stats = [
-    {
-      icon: Users,
-      value: "24/7",
-      label: "دعم متواصل",
-      color: "from-[#ffaf12] to-[#ffd02d]",
-    },
-    {
-      icon: Smile,
-      value: "99%",
-      label: "رضا العملاء",
-      color: "from-[#2fa586] to-[#2d9f81]",
-    },
-  ];
-
-  return (
-    <section
-      ref={ref}
-      className="py-20 bg-gradient-to-b from-[#e8ece7] via-[#d6e0d4] to-[#f4f5f7] relative overflow-hidden"
-    >
-      {/* Animated Background */}
-      {Array.from({ length: 10 }).map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            y: [0, -100, 0],
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: i * 0.3,
-          }}
-          className="absolute w-2 h-2 bg-[#2fa586] rounded-full"
-          style={{
-            left: `${i * 10}%`,
-            top: "50%",
-          }}
-        />
-      ))}
-
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: index * 0.2 }}
-                className="text-center relative"
-              >
-                <div
-                  className={`w-24 h-24 rounded-full bg-gradient-to-br ${stat.color} flex items-center justify-center mx-auto mb-6 shadow-2xl`}
-                >
-                  <Icon className="w-12 h-12 text-white" />
-                </div>
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ delay: 0.5 + index * 0.2, type: "spring" }}
-                  className="text-7xl font-bold bg-gradient-to-r from-[#154a3c] to-[#2fa586] bg-clip-text text-transparent mb-4"
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-[#154a3c]/80 text-2xl font-semibold">
-                  {stat.label}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Floating Emergency Button
-function FloatingEmergencyButton() {
-  return (
-    <motion.a
-      href="tel:9647743538560"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 left-8 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-[#d61e38] to-[#ff8a3d] flex items-center justify-center shadow-2xl hover:shadow-[#d61e38]/50 transition-all group"
-    >
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-        className="absolute inset-0 rounded-full bg-[#d61e38]/30"
-      />
-      <PhoneCall className="w-8 h-8 text-white relative z-10 group-hover:rotate-12 transition-transform" />
-    </motion.a>
   );
 }
 
