@@ -181,7 +181,7 @@ function ContactFormSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#154a3c] mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#154a3c] mb-3">
             تواصل معنا
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-[#f6b640] to-[#2fa586] mx-auto rounded-full mb-4" />

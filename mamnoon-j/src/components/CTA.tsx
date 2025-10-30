@@ -107,10 +107,10 @@ export default function CTA() {
               damping: 15,
               delay: 0.2,
             }}
-            className="inline-flex items-center gap-2 glass-strong px-6 py-3 rounded-full"
+            className="inline-flex items-center gap-2 glass-strong px-4 sm:px-6 py-2 sm:py-3 rounded-full"
           >
-            <Sparkles className="w-5 h-5 text-primary-yellow" />
-            <span className="text-white font-medium text-lg">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-primary-yellow" />
+            <span className="text-white font-medium text-sm sm:text-base lg:text-lg">
               انضم إلى آلاف العملاء السعداء
             </span>
           </motion.div>
@@ -121,7 +121,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight px-4"
           >
             جاهز للبدء؟
           </motion.h2>
@@ -132,7 +132,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4"
           >
             حمّل التطبيق الآن واستمتع بخدماتنا المميزة في أي وقت وأي مكان
           </motion.p>

@@ -69,7 +69,7 @@ export default function WhyMamnon() {
   return (
     <section
       ref={ref}
-      className="py-20 bg-gradient-to-b from-[#d6e0d4] via-[#e8ece7] to-[#f4f5f7] relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#d6e0d4] via-[#e8ece7] to-[#f4f5f7] relative overflow-hidden"
     >
       {/* Flowing Background Elements */}
       <motion.div
@@ -92,12 +92,12 @@ export default function WhyMamnon() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#154a3c] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#154a3c] mb-3 sm:mb-4">
             لماذا ممنون؟
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             نجمع بين السرعة والموثوقية والتكنولوجيا الذكية
           </p>
           <div className="w-24 h-1 bg-[#ffaf12] mx-auto mt-6"></div>

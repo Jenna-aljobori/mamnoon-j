@@ -241,7 +241,7 @@ function ServicesGrid() {
           <div className="inline-block px-6 py-2 bg-[#2fa586]/10 backdrop-blur-sm rounded-full border border-[#2fa586]/20 mb-4">
             <span className="text-[#2fa586] font-bold">خدماتنا</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-6">
             خدماتنا المتكاملة
           </h2>
           <p className="text-xl text-[#154a3c]/70 max-w-3xl mx-auto">
@@ -577,7 +577,7 @@ function PaymentCardStack() {
                 "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
             }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#154a3c] mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#154a3c] mb-4 sm:mb-6">
               طرق الدفع المتاحة
             </h2>
 
@@ -700,10 +700,10 @@ function OffersCTA() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             جاهز للحصول على أفضل خدمة؟
           </h2>
-          <p className="text-2xl md:text-3xl text-white mb-12">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-8 sm:mb-10 lg:mb-12 px-4">
             تواصل معنا الآن واحجز الخدمة التي تحتاجها
           </p>
 

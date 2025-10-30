@@ -32,7 +32,7 @@ export default function HowItWorks() {
   return (
     <section
       ref={containerRef}
-      className="py-20 relative overflow-hidden bg-gradient-to-b from-[#f6b640] via-[#e8d5b8] to-[#d6e0d4]"
+      className="py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-gradient-to-b from-[#f6b640] via-[#e8d5b8] to-[#d6e0d4]"
     >
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 opacity-5">
@@ -54,20 +54,20 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#154a3c]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[#154a3c]">
             كيف يعمل؟
           </h2>
-          <p className="text-xl text-[#154a3c]/70">
+          <p className="text-base sm:text-lg lg:text-xl text-[#154a3c]/70 px-4">
             احصل على الخدمة في 3 خطوات بسيطة
           </p>
-          <div className="w-24 h-1 mx-auto bg-[#2fa586] mt-4"></div>
+          <div className="w-20 sm:w-24 h-1 mx-auto bg-[#2fa586] mt-3 sm:mt-4"></div>
         </motion.div>
 
         {/* Steps Container */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {steps.map((step, index) => {
               const Icon = step.icon;
 

@@ -158,7 +158,7 @@ function StoryHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#154a3c] mb-6 leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#154a3c] mb-4 sm:mb-6 leading-tight px-4"
               >
                 رحلة النجاح
                 <br />
@@ -298,7 +298,7 @@ function JourneyTimeline() {
           <div className="inline-block px-6 py-2 bg-[#2fa586]/10 backdrop-blur-sm rounded-full border border-[#2fa586]/20 mb-4">
             <span className="text-[#2fa586] font-bold">رحلتنا</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             قصة نجاح ملهمة
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#f6b640] to-[#2fa586] mx-auto rounded-full" />
@@ -469,7 +469,7 @@ function MissionVision() {
           <div className="inline-block px-6 py-2 bg-[#f6b640]/10 backdrop-blur-sm rounded-full border border-[#f6b640]/20 mb-4">
             <span className="text-[#f6b640] font-bold">رسالتنا ورؤيتنا</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             نحو مستقبل أفضل
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#f6b640] to-[#2fa586] mx-auto rounded-full" />
@@ -676,7 +676,7 @@ function CoreValues() {
           <div className="inline-block px-6 py-2 bg-[#2fa586]/10 backdrop-blur-sm rounded-full border border-[#2fa586]/20 mb-4">
             <span className="text-[#2fa586] font-bold">قيمنا</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             القيم التي نؤمن بها
           </h2>
           <p className="text-xl text-[#154a3c]/70 max-w-3xl mx-auto">
@@ -776,7 +776,7 @@ function TeamSection() {
           <div className="inline-block px-6 py-2 bg-[#f6b640]/10 backdrop-blur-sm rounded-full border border-[#f6b640]/20 mb-4">
             <span className="text-[#f6b640] font-bold">فريقنا</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             الأشخاص وراء النجاح
           </h2>
           <p className="text-xl text-[#154a3c]/70 max-w-3xl mx-auto">
@@ -930,10 +930,10 @@ function StoryCTA() {
             />
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-bold text-[#154a3c] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#154a3c] mb-4 sm:mb-6 px-4">
             انضم إلى رحلتنا
           </h2>
-          <p className="text-2xl md:text-3xl text-white mb-12">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-8 sm:mb-10 lg:mb-12 px-4">
             كن جزءاً من قصة النجاح. حمّل التطبيق الآن
           </p>
 

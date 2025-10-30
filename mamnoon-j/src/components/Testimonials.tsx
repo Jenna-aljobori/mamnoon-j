@@ -254,7 +254,7 @@ function TestimonialCard({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 text-right"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-6 sm:mb-8 text-right"
         >
           &ldquo;{testimonial.text}&rdquo;
         </motion.p>
