@@ -636,131 +636,6 @@ function PaymentCardStack() {
   );
 }
 
-// Partners & Brands Section
-function PartnersSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const partners = [
-    { name: "شركة الوقود العراقية", category: "شريك الوقود" },
-    { name: "بريدجستون", category: "شريك الإطارات" },
-    { name: "موبيل", category: "شريك الزيوت" },
-    { name: "بوش", category: "شريك قطع الغيار" },
-    { name: "هيونداي", category: "وكيل معتمد" },
-    { name: "تويوتا", category: "وكيل معتمد" },
-  ];
-
-  return (
-    <section
-      ref={ref}
-      className="py-20 bg-gradient-to-b from-[#d6e0d4] to-[#e8ece7] relative overflow-hidden"
-    >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(47,165,134,0.3) 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
-        >
-          <div className="inline-block px-6 py-2 bg-[#2fa586]/10 backdrop-blur-sm rounded-full border border-[#2fa586]/20 mb-4">
-            <span className="text-[#2fa586] font-bold">شركاؤنا</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#154a3c] mb-4">
-            نفخر بالعمل مع أفضل العلامات التجارية
-          </h2>
-          <p className="text-lg text-[#154a3c]/70 max-w-2xl mx-auto">
-            نتعاون مع أفضل الشركات العالمية لضمان جودة خدماتنا
-          </p>
-        </motion.div>
-
-        {/* Partners Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative"
-            >
-              <div
-                className="relative h-32 rounded-2xl p-6 flex flex-col items-center justify-center gap-2 transition-all duration-300"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-                  backdropFilter: "blur(20px)",
-                  border: "2px solid rgba(255,255,255,0.8)",
-                  boxShadow:
-                    "0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 1px 0 rgba(255,255,255,0.9)",
-                }}
-              >
-                {/* Shine Effect */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-90" />
-
-                {/* Logo Placeholder */}
-                <div className="text-3xl font-bold bg-gradient-to-r from-[#2fa586] to-[#f6b640] bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                  {partner.name}
-                </div>
-
-                {/* Category Badge */}
-                <div className="text-xs text-[#154a3c]/60 font-medium">
-                  {partner.category}
-                </div>
-
-                {/* Hover Glow */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-[#f6b640]/10 to-[#2fa586]/5" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-4"
-        >
-          {[
-            "✓ معتمد من وزارة النقل",
-            "✓ شهادة الجودة ISO 9001",
-            "✓ أكثر من 10 سنوات خبرة",
-          ].map((badge, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-3 rounded-full"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)",
-                backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255,255,255,0.8)",
-                boxShadow: "0 4px 16px 0 rgba(31, 38, 135, 0.1)",
-              }}
-            >
-              <span className="text-[#154a3c] font-semibold text-sm">
-                {badge}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 // Call-to-Action Section
 function OffersCTA() {
   // Generate stable random positions for particles
@@ -865,7 +740,6 @@ export default function OffersPage() {
       <main>
         <OffersHero />
         <ServicesGrid />
-        <PartnersSection />
         <PaymentCardStack />
         <OffersCTA />
       </main>
